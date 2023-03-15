@@ -7,13 +7,13 @@ void logo() {
   String subTitle = "Nostr Signing Device";
 
   tft.fillScreen(TFT_BLACK);
-  tft.setTextColor(TFT_GREEN, TFT_BLACK);
+  tft.setTextColor(TFT_PURPLE, TFT_BLACK);
   tft.setTextSize(4);
   tft.setCursor(0, 20);
   tft.print(title);
   tft.setTextSize(2);
   tft.setCursor(0, 70);
-  tft.setTextColor(TFT_WHITE, TFT_BLACK);
+  tft.setTextColor(TFT_PURPLE, TFT_BLACK);
   tft.print(subTitle);
   tft.setTextSize(1);
   tft.setCursor(0, 150);
@@ -23,7 +23,7 @@ void logo() {
 void showMessage(String message, String additional)
 {
   tft.fillScreen(TFT_BLACK);
-  tft.setTextColor(TFT_WHITE, TFT_BLACK);
+  tft.setTextColor(TFT_PURPLE, TFT_BLACK);
   tft.setTextSize(2);
   tft.setCursor(0, 30);
   tft.println(message);
@@ -38,12 +38,12 @@ void showMessage(String message, String additional)
 
 void printMnemonicWord(String position, String word) {
   tft.fillScreen(TFT_BLACK);
-  tft.setTextColor(TFT_WHITE, TFT_BLACK);
+  tft.setTextColor(TFT_PURPLE, TFT_BLACK);
   tft.setTextSize(2);
   tft.setCursor(0, 10);
   tft.println("Word " + position + ":");
   tft.println("");
-  tft.setTextColor(TFT_GREEN, TFT_BLACK);
+  tft.setTextColor(TFT_PURPLE, TFT_BLACK);
   tft.setTextSize(3);
   tft.println(word);
 }
@@ -75,7 +75,7 @@ void showQRCode(String s) {
     for (uint8_t x = 0; x < qrcode.size; x++) {
       bool full = qrcode_getModule(&qrcode, x, y);
 
-      int color = full ? TFT_WHITE : TFT_BLACK;
+      int color = full ? TFT_PURPLE : TFT_BLACK;
       tft.fillRect((x + 2) * px, (y + 1) * px, px, px, color);
     }
   }
